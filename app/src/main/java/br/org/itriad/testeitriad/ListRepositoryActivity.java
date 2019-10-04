@@ -19,7 +19,6 @@ public class ListRepositoryActivity extends AppCompatActivity {
                 this,
                 Navigation.findNavController(this, R.id.navHostFragment)
             );
-
     }
 
    // Button Back toolbar
