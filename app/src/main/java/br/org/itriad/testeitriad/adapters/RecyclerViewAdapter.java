@@ -1,4 +1,4 @@
-package br.org.itriad.testeitriad.ui;
+package br.org.itriad.testeitriad.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,8 +63,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.title.setText(mDataset.get(position).getName());
 
-        if(mDataset.get(position).getDescription().length() > 90){
-            holder.description.setText(mDataset.get(position).getDescription().substring(0,90) + "...");
+        if(mDataset.get(position).getDescription().length() > 80){
+            holder.description.setText(mDataset.get(position).getDescription().substring(0,80) + "...");
         }else{
             holder.description.setText(mDataset.get(position).getDescription());
 

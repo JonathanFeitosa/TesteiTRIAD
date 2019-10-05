@@ -5,22 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="124dp">
 
-<!--  <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/RVCardView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="120dp"-->
-<!--        android:clickable="true"-->
-<!--        android:foreground="?android:attr/selectableItemBackground"-->
-<!--        app:cardCornerRadius="5dp"-->
-<!--        app:cardElevation="4dp"-->
-<!--        app:cardPreventCornerOverlap="false"-->
-<!--        app:contentPadding="0dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
+  <com.google.android.material.card.MaterialCardView
+        android:id="@+id/CardViewRL"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:clickable="false"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutCardView"
+            android:id="@+id/constraintLayoutRL"
+            android:foreground="?android:attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,12 +29,12 @@
 
                 <ImageView
                     android:id="@+id/imgStar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="14dp"
+                    android:layout_height="24dp"
                     android:layout_marginEnd="3dp"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/poppins_light"
-                    android:src="@drawable/star"
+                    android:src="@drawable/star2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/gitStart"
                     app:layout_constraintHorizontal_chainStyle="packed"
@@ -48,7 +48,8 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="4dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet massa ut maximus blandit."
+                android:fontFamily="@font/poppins"
+                android:text="@string/infoDescriptionLR"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +62,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/poppins_light"
-                    android:text="jonathanfeitosa"
+                    android:text="@string/infoAuthorLR"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -73,26 +74,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="GitHubRepository"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/infoTitleLR"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/gitStart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:fontFamily="@font/poppins_light"
-                    android:text="500"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toEndOf="@+id/imgStar"
-                    app:layout_constraintTop_toBottomOf="@+id/gitDescription" />
+            <TextView
+                android:id="@+id/gitStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/infoStarLR"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/imgStar"
+                app:layout_constraintTop_toBottomOf="@+id/gitDescription" />
 
                 <TextView
                     android:id="@+id/gitLanguage"
@@ -101,12 +103,14 @@
                     android:layout_marginEnd="12dp"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/poppins_light"
-                    android:text="Java"
+                    android:text="@string/infoLanguageLR"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/gitDescription" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--    </androidx.cardview.widget.CardView>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

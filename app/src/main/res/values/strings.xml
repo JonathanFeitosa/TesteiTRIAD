@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">TesteiTRIAD</string>
+
+    <!-- View Details -->
+    <string name="txtInfoAuthorVD">Created by:</string>
+    <string name="txtInfoStarVD">Number of Stars</string>
+    <string name="txtInfoLanguageVD">Language</string>
+    <string name="txtInfoDescriptonVD">Description</string>
+
+    <string name="txtRepositoriesVD">retrofit</string>
+    <string name="txtAuthorVD">jonathanfeitosa</string>
+    <string name="txtStarVD">7337</string>
+    <string name="txtLanguageVD">Java</string>
+    <string name="txtDescriptonVD">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt, diam sed convallis consectetur, sapien nulla vestibulum est, sit amet sodales justo eros viverra odio. </string>
+
+
+    <!-- Item ListRow -->
+    <string name="infoTitleLR">GitHubRepository</string>
+    <string name="infoDescriptionLR">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet massa ut maximus blandit.</string>
+    <string name="infoAuthorLR">jonathanfeitosa</string>
+    <string name="infoStarLR">3737</string>
+    <string name="infoLanguageLR">Java</string>
+
+
 </resources>

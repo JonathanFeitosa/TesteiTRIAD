@@ -1,14 +1,12 @@
-package br.org.itriad.testeitriad.ui;
-
+package br.org.itriad.testeitriad.ui.repositorylist;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
-
 import br.org.itriad.testeitriad.R;
 
-public class ListRepositoryActivity extends AppCompatActivity {
+public class RepositoryListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

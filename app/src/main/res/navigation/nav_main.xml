@@ -6,7 +6,7 @@
 
     <fragment
             android:id="@+id/navigation_home"
-            android:name="br.org.itriad.testeitriad.ListRepositoryFragment"
+            android:name="br.org.itriad.testeitriad.ui.repositorylist.RepositoryListFragment"
             android:label="GitHub - Android"
             tools:layout="@layout/fragment_listrepository" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
             android:id="@+id/navigation_config"
-            android:name="br.org.itriad.testeitriad.ViewRepositoryFragment"
+            android:name="br.org.itriad.testeitriad.ui.repositorydetails.RepositoryViewFragment"
             android:label="View Details"
             tools:layout="@layout/fragment_viewrepository" />
 </navigation>

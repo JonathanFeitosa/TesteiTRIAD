@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FCFCFC"
-    tools:context=".ui.repositorydetails.ViewRepositoryFragment">
+    tools:context=".ui.repositorydetails.RepositoryViewFragment">
 
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayoutRV"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="#E6008577"
+        android:background="@color/backgroundColorVD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -37,8 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins"
-            android:text="retrofit"
-            android:textColor="#FFFFFF"
+            android:text="@string/txtRepositoriesVD"
+            android:textColor="@color/backgroundTextColorVD"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,8 +50,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/poppins"
-            android:text="Created by:"
-            android:textColor="#FFFFFF"
+            android:text="@string/txtInfoAuthorVD"
+            android:textColor="@color/backgroundTextColorVD"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -65,8 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins"
-            android:text="jonathanfeitosa"
-            android:textColor="#FFFFFF"
+            android:text="@string/txtAuthorVD"
+            android:textColor="@color/backgroundTextColorVD"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +77,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/CardViewStar"
         android:layout_width="0dp"
         android:layout_height="120dp"
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/CardViewLanguage"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutRV">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,23 +102,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
-                android:text="Language"
-                android:textColor="#CC000000"
+                android:text="@string/txtInfoLanguageVD"
+                android:textColor="@color/txtTitleColorVD"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/txtgitLanguage"
+                app:layout_constraintBottom_toTopOf="@+id/txtGitLanguage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/txtgitLanguage"
+                android:id="@+id/txtGitLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:text="Kotlin"
-                android:textColor="#99000000"
+                android:text="@string/txtLanguageVD"
+                android:textColor="@color/txtInfoColorVD"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -126,9 +126,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleLanguage"
                 app:layout_constraintVertical_chainStyle="packed" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/CardViewLanguage"
         android:layout_width="0dp"
         android:layout_height="120dp"
@@ -141,7 +141,7 @@
         app:layout_constraintEnd_toStartOf="@+id/CardViewStar"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutRV">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -152,33 +152,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
-                android:text="Number of Stars"
-                android:textColor="#CC000000"
+                android:text="@string/txtInfoStarVD"
+                android:textColor="@color/txtTitleColorVD"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/txtgitStar"
+                app:layout_constraintBottom_toTopOf="@+id/txtGitStar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/txtgitStar"
+                android:id="@+id/txtGitStar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:text="5000"
-                android:textColor="#99000000"
+                android:text="@string/txtStarVD"
+                android:textColor="@color/txtInfoColorVD"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleStar" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/CardViewLanguage2"
         android:layout_width="0dp"
         android:layout_height="120dp"
@@ -204,8 +204,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins"
-                android:text="Description"
-                android:textColor="#CC000000"
+                android:text="@string/txtInfoDescriptonVD"
+                android:textColor="@color/txtTitleColorVD"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtGitDescription"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -223,8 +223,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/poppins_light"
-                android:text="Test"
-                android:textColor="#99000000"
+                android:text="@string/txtDescriptonVD"
+                android:textColor="@color/txtInfoColorVD"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -232,6 +232,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleDescription" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
