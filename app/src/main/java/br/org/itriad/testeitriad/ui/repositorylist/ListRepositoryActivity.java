@@ -1,10 +1,12 @@
-package br.org.itriad.testeitriad;
+package br.org.itriad.testeitriad.ui;
 
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
+
+import br.org.itriad.testeitriad.R;
 
 public class ListRepositoryActivity extends AppCompatActivity {
 

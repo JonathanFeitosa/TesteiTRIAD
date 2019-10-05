@@ -1,28 +1,28 @@
-package br.org.itriad.testeitriad;
+package br.org.itriad.testeitriad.ui;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.ArrayList;
 
-import br.org.itriad.testeitriad.api.ApiServiceStart;
+import br.org.itriad.testeitriad.R;
 import br.org.itriad.testeitriad.api.ApiServiceInterface;
+import br.org.itriad.testeitriad.api.ApiServiceStart;
 import br.org.itriad.testeitriad.model.GitHubRepositories;
 import br.org.itriad.testeitriad.model.Item;
 import br.org.itriad.testeitriad.util.Constants;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class ListRepositoryFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
@@ -59,12 +59,19 @@ public class ListRepositoryFragment extends Fragment implements SwipeRefreshLayo
 
                         listrepositories = response.body().getItems();
 
-                        // RV
-                        RecyclerView.Adapter mAdapter = new RecyclerViewAdapter(listrepositories);
                         recyclerView.setHasFixedSize(true);
                         recyclerView.setLayoutManager(mLayoutManager);
-                        recyclerView.setAdapter(mAdapter);
+                        recyclerView.setAdapter(new RecyclerViewAdapter(listrepositories, new RecyclerViewAdapter.OnItemClickListener() {
+                            @Override public void onItemClick(Item item) {
+                                Toast.makeText(getContext(), "Item Clicked - " + item.getName(), Toast.LENGTH_LONG).show();
+                                Bundle bundle = new Bundle();
+                                bundle.putSerializable("Teste", item);
+
+                                Navigation.findNavController(recyclerView).navigate(R.id.action_navigation_home_to_navigation_config, bundle);
+                            }
+                        }));
                         mSwipeRefreshLayout.setRefreshing(false);
+
 
                     } catch (Exception e) {
                         Toast.makeText(requireActivity(), "Error[#1] loading repositories: " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -113,5 +120,4 @@ public class ListRepositoryFragment extends Fragment implements SwipeRefreshLayo
     public void onRefresh() {
         getRepositories();
     }
-
 }
