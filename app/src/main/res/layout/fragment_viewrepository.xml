@@ -1,37 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcfcfc"
+    android:background="#FCFCFC"
     tools:context=".ViewRepositoryFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:id="@+id/appbar"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
-    <com.google.android.material.appbar.CollapsingToolbarLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_scrollFlags="exitUntilCollapsed|scroll"
-        app:contentScrim="?attr/colorPrimary"
-        app:title="App Title"
-        app:expandedTitleMarginStart="48dp"
-        app:expandedTitleMarginEnd="64dp"
-        android:background="@drawable/materialbackground">
 
-             <androidx.appcompat.widget.Toolbar
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#CC008577"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/txtGitAvatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtCreatedBy"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtGitRepository" />
+
+        <TextView
+            android:id="@+id/txtGitRepository"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
+            android:text="retrofit"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtCreatedBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins"
+            android:text="Created by:"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/txtGitAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/txtGitRepository" />
+
+        <TextView
+            android:id="@+id/txtGitAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins"
+            android:text="jonathanfeitosa"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/txtGitAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/txtCreatedBy"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewStar"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="4dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/CardViewLanguage"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_collapseMode="pin"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:id="@+id/toolbarid">
+            android:layout_height="match_parent">
 
-             </androidx.appcompat.widget.Toolbar>
+            <TextView
+                android:id="@+id/txtTitleLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Language"
+                android:textColor="#CC000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtgitLanguage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
 
-    </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+            <TextView
+                android:id="@+id/txtgitLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Kotlin"
+                android:textColor="#99000000"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleLanguage"
+                app:layout_constraintVertical_chainStyle="packed" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewLanguage"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="1dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/CardViewStar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtTitleStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Number of Stars"
+                android:textColor="#CC000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtgitStar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/txtgitStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="5000"
+                android:textColor="#99000000"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleStar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewLanguage2"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CardViewLanguage">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtTitleDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Description"
+                android:textColor="#CC000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtGitDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/txtGitDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Test"
+                android:textColor="#99000000"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
